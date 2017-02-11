@@ -1,0 +1,2 @@
+# solitude
+A WordPress Theme
