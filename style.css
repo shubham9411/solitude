@@ -77,8 +77,10 @@ a:visited{
 	border-color: #666;
 }
 .site-title{
-	margin-top: 0.3em;
+	/*margin-top: 0.3em;*/
 	font-size: 2em;
+	height: auto;
+	padding: 1rem;
 }
 .current_page_item a{
 	border-bottom: solid 2px #e96656;

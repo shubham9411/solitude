@@ -18,6 +18,12 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<?php wp_head(); ?>
+		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+		<style type="text/css">
+			body{
+				font-family: 'Lato' , sans-sarif;
+			}
+		</style>
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="page" class="site">
@@ -34,7 +40,7 @@
 									<span class="icon-bar"></span>
 								</button>
 							</div>
-							<a class="navbar-brand site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							<a class="navbar-brand site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><div><small style="font-weight: 500;font-size:0.6em;line-height: 1.5em;"><?php bloginfo( 'description' );?></small></div></a>
 						</div>
 						<div id="top-menu" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav navbar-right">
