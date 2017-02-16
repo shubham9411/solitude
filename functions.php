@@ -1,11 +1,31 @@
 <?php
+/**
+ * Solitude functions and definitions
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package WordPress
+ * @subpackage Solitude
+ * @since 1.0
+ */
 
-if ( ! isset( $content_width ) ) $content_width = 700;
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ *
+ * @since Solitude 1.0
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 700;
+}
 
-if( ! function_exists( 'solitude_scripts' ) ):
+/**
+ * Enqueue scripts and styles
+ */
+if ( ! function_exists( 'solitude_scripts' ) ) : 
 
 	function solitude_scripts() {
-		wp_enqueue_style( 'solitude-style' , get_stylesheet_uri() , array('solitude-bootstrap') , '15022017' , 'all' );
+		wp_enqueue_style( 'solitude_google_fonts' );
+		wp_enqueue_style( 'solitude-style' , get_stylesheet_uri() , array( 'solitude-bootstrap' ) , '15022017' , 'all' );
 		wp_enqueue_style( 'solitude-bootstrap' , get_theme_file_uri( '/css/bootstrap.css' ) , array() , '3.3.7' , 'all' );
 		wp_enqueue_script( 'solitude-main' , get_theme_file_uri( '/js/main.js' ) , array( 'jquery' ) , '15022017' , true );
 		wp_enqueue_script( 'solitude-bootstrap-js' , get_theme_file_uri( '/js/bootstrap.js' ) , array( 'jquery' ) , '3.3.7' , true );
@@ -15,7 +35,17 @@ if( ! function_exists( 'solitude_scripts' ) ):
 
 endif;
 
-if ( ! function_exists( 'solitude_setup' ) ):
+
+if ( ! function_exists( 'solitude_setup' ) ) :
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which runs
+	 * before the init hook. The init hook is too late for some features, such as indicating
+	 * support post thumbnails.
+	 *
+	 * @since Solitude 1.0
+	 */
 
 	function solitude_setup() {
 
@@ -55,7 +85,7 @@ if ( ! function_exists( 'solitude_setup' ) ):
 		add_editor_style( array( 'css/editor-style.css' ) );
 
 	}
-	
+
 	add_action( 'after_setup_theme', 'solitude_setup' );
 
 endif;
@@ -71,3 +101,20 @@ function solitude_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 add_action( 'wp_head', 'solitude_javascript_detection', 0 );
+
+if ( ! function_exists( 'solitude_google_fonts' ) ) {
+
+	/**
+	 * Add Google Fonts
+	 * 
+	 * @since Solitude 1.0
+	 */
+	
+	function solitude_google_fonts(){
+		$query_args = array(
+			'family' => 'Lato',
+		);
+		wp_register_style( 'solitude_google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+	}
+	add_action('init', 'solitude_google_fonts');
+}

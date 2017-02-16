@@ -3,13 +3,13 @@
 * The header for our theme
 *
 * This is the template that displays all of the <head> section and everything up until <div id="content">
-			*
-			* @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
-			*
-			* @package WordPress
-			* @subpackage Solitude
-			* @since 1.0
-			* @version 1.0
+*
+* @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+*
+* @package WordPress
+* @subpackage Solitude
+* @since 1.0
+* @version 1.0
 */?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
@@ -18,12 +18,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<?php wp_head(); ?>
-		<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-		<style type="text/css">
-			body{
-				font-family: 'Lato' , sans-sarif;
-			}
-		</style>
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="page" class="site">
@@ -47,17 +41,13 @@
 								
 							</ul>
 							<?php
-							   /**
-								* Displays a navigation menu
-								* @param array $args Arguments
-								*/
 								$args = array(
 									'theme_location' => 'top',
 									'container' => 'ul',
 									'menu_class' => 'nav navbar-nav navbar-right',
 									'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
 									'depth' => 1,
-									'walker' => ''
+									'walker' => '',
 								);
 								wp_nav_menu( $args );
 								?>
