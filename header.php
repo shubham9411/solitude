@@ -1,16 +1,18 @@
 <?php
 /**
-* The header for our theme
-*
-* This is the template that displays all of the <head> section and everything up until <div id="content">
-*
-* @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
-*
-* @package WordPress
-* @subpackage Solitude
-* @since 1.0
-* @version 1.0
-*/?><!DOCTYPE html>
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package WordPress
+ * @subpackage Solitude
+ * @since 1.0
+ * @version 1.0
+ */
+
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 	<head>
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -21,7 +23,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="page" class="site">
-			<a class="skip-link sr-only screen-reader-text" href="#content"><?php _e( 'Skip to content', 'solitude' ); ?></a>
+			<a class="skip-link sr-only screen-reader-text" href="#content"><?php _e( 'Skip to content', 'solitude' ); // WPCS: xss ok ?></a> 
 			<header id="header" class="">
 				<nav class="navbar navbar-fixed-top">
 					<div class="container">

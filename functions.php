@@ -18,11 +18,10 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 700;
 }
 
-/**
- * Enqueue scripts and styles
- */
-if ( ! function_exists( 'solitude_scripts' ) ) : 
-
+if ( ! function_exists( 'solitude_scripts' ) ) :
+	/**
+	 * Enqueue scripts and styles
+	 */
 	function solitude_scripts() {
 		wp_enqueue_style( 'solitude_google_fonts' );
 		wp_enqueue_style( 'solitude-style' , get_stylesheet_uri() , array( 'solitude-bootstrap' ) , '15022017' , 'all' );
@@ -45,8 +44,7 @@ if ( ! function_exists( 'solitude_setup' ) ) :
 	 * support post thumbnails.
 	 *
 	 * @since Solitude 1.0
-	 */
-
+	*/
 	function solitude_setup() {
 
 		load_theme_textdomain( 'solitude' );
@@ -106,15 +104,14 @@ if ( ! function_exists( 'solitude_google_fonts' ) ) {
 
 	/**
 	 * Add Google Fonts
-	 * 
+	 *
 	 * @since Solitude 1.0
-	 */
-	
-	function solitude_google_fonts(){
+	*/
+	function solitude_google_fonts() {
 		$query_args = array(
 			'family' => 'Lato',
 		);
-		wp_register_style( 'solitude_google_fonts', add_query_arg( $query_args, "//fonts.googleapis.com/css" ), array(), null );
+		wp_register_style( 'solitude_google_fonts', add_query_arg( $query_args , '//fonts.googleapis.com/css' ) , array() , null );
 	}
-	add_action('init', 'solitude_google_fonts');
+	add_action( 'init' , 'solitude_google_fonts' );
 }
