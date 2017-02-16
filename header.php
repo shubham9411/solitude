@@ -23,7 +23,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<div id="page" class="site">
-			<a class="skip-link sr-only screen-reader-text" href="#content"><?php _e( 'Skip to content', 'solitude' ); // WPCS: xss ok ?></a> 
+			<a class="skip-link sr-only screen-reader-text" href="#content"><?php _e( 'Skip to content', 'solitude' ); // WPCS: xss ok. ?></a> 
 			<header id="header" class="">
 				<nav class="navbar navbar-fixed-top">
 					<div class="container">

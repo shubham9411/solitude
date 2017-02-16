@@ -44,7 +44,7 @@ if ( ! function_exists( 'solitude_setup' ) ) :
 	 * support post thumbnails.
 	 *
 	 * @since Solitude 1.0
-	*/
+	 */
 	function solitude_setup() {
 
 		load_theme_textdomain( 'solitude' );
@@ -106,7 +106,7 @@ if ( ! function_exists( 'solitude_google_fonts' ) ) {
 	 * Add Google Fonts
 	 *
 	 * @since Solitude 1.0
-	*/
+	 */
 	function solitude_google_fonts() {
 		$query_args = array(
 			'family' => 'Lato',
