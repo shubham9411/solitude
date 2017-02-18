@@ -111,4 +111,4 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
 /**
  * Bootstrap Themes
  */
-require get_parent_theme_file_path( '/inc/bootstrap-styles.php' );
+require get_parent_theme_file_path( '/inc/custom-styles.php' );

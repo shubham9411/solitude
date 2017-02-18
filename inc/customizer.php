@@ -20,6 +20,9 @@ function solitude_customize_register( $wp_customize ) {
 		'render_callback' => 'solitude_customize_partial_blogname',
 	) );
 
+	/**
+	 * Bootstrap Themes
+	 */
 	$wp_customize->add_setting( 'solitude_bootstrap_themes' , array(
 		'default' => 'default',
 		'transport' => 'refresh',
@@ -63,6 +66,39 @@ function solitude_customize_register( $wp_customize ) {
 		'priority' => 160,
 		'capability' => 'edit_theme_options',
 	) );
+
+	/**
+	 * Header Color
+	 */
+	$wp_customize->add_setting( 'solitude_header_color' , array(
+		'default' => '#b92b27',
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_setting( 'solitude_header_border_size' , array(
+		'default' => 2,
+		'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'absint',
+	) );
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'solitude_header_color', array(
+		'label' => __( 'Header Color' , 'solitude' ),
+		'section'  => 'colors',
+		'settings' => 'solitude_header_color',
+	) ) );
+
+	$wp_customize->add_control( 'solitude_header_border_size' , array(
+		'type' => 'number',
+		'label' => __( 'Header Color\'s Border Size' , 'solitude' ),
+		'section' => 'colors',
+	) );
+
+	$wp_customize->get_setting( 'solitude_header_color' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'solitude_header_border_size' )->transport = 'postMessage';
+
 }
 add_action( 'customize_register' , 'solitude_customize_register' );
 
