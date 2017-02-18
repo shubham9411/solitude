@@ -17,11 +17,11 @@ if ( ! class_exists( 'Walker_Nav_top' ) ) {
 	class Walker_Nav_top extends Walker_Nav_Menu {
 		/**
 		 * Ends the list of after the elements are added.
-		 * 
+		 *
 		 * @see Walker::start_lvl()
 		 * @since 3.0.0
 		 *
-		 * @param string output Passed by reference. Used to append additional content.
+		 * @param string $output Passed by reference. Used to append additional content.
 		 * @param int  $depth Depth of page. Used for padding.
 		 * @param array $args An array of additional arguments.
 		 */
@@ -32,7 +32,7 @@ if ( ! class_exists( 'Walker_Nav_top' ) ) {
 
 		/**
 		 * Manipulate the elements eg. link, span, li
-		 * 
+		 *
 		 * @see Walker::start_el()
 		 * @since 3.0.0
 		 *
@@ -52,18 +52,18 @@ if ( ! class_exists( 'Walker_Nav_top' ) ) {
 			 * comparison that is not case sensitive. The strcasecmp() function returns
 			 * a 0 if the strings are equal.
 			 */
-			if ( 0 == strcasecmp( $item->attr_title, 'divider' ) && 1 === $depth ) {
+			if ( 0 == strcasecmp( $item->attr_title , 'divider' ) && 1 === $depth ) {
 				$output .= $indent . '<li role="presentation" class="divider">';
-			} 
-			elseif ( 0 == strcasecmp( $item->title, 'divider') && 1 === $depth ) {
+			}
+			elseif ( 0 == strcasecmp( $item->title , 'divider' ) && 1 === $depth ) {
 				$output .= $indent . '<li role="presentation" class="divider">';
-			} 
-			elseif ( 0 == strcasecmp( $item->attr_title, 'dropdown-header') && 1 === $depth ) {
+			}
+			elseif ( 0 == strcasecmp( $item->attr_title , 'dropdown-header' ) && 1 === $depth ) {
 				$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
-			} 
-			elseif ( 0 == strcasecmp($item->attr_title, 'disabled' ) ) {
+			}
+			elseif ( 0 == strcasecmp( $item->attr_title , 'disabled' ) ) {
 				$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
-			} 
+			}
 			else {
 				$class_names = $value = '';
 				$classes = empty( $item->classes ) ? array() : (array) $item->classes;
@@ -111,7 +111,7 @@ if ( ! class_exists( 'Walker_Nav_top' ) ) {
 				 */
 				if ( ! empty( $item->attr_title ) ) {
 					$item_output .= '<a' . $attributes . '><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
-				} 
+				}
 				else {
 					$item_output .= '<a' . $attributes . '>';
 				}
@@ -135,10 +135,10 @@ if ( ! class_exists( 'Walker_Nav_top' ) ) {
 		 * @since 2.5.0
 		 *
 		 * @param object $element Data object.
-		 * @param array $children_elements List of elements to continue traversing.
-		 * @param int  $max_depth Max depth to traverse.
-		 * @param int  $depth Depth of current element.
-		 * @param array $args The array object.
+		 * @param array  $children_elements List of elements to continue traversing.
+		 * @param int    $max_depth Max depth to traverse.
+		 * @param int    $depth Depth of current element.
+		 * @param array  $args The array object.
 		 * @param string $output Passed by reference. Used to append additional content.
 		 * @return null Null on failure with no changes to parameters.
 		 */

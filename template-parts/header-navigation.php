@@ -8,7 +8,8 @@
  * @version 1.0
  */
 
-?><nav class="navbar navbar-default navbar-fixed-top">
+$navbar_varient = get_theme_mod( 'solitude_bootstrap_varient' , 'default' );
+?><nav class="navbar navbar-<?php echo $navbar_varient; ?> navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-menu" aria-expanded="false" aria-controls="navbar">

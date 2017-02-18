@@ -25,7 +25,6 @@ if ( ! function_exists( 'solitude_scripts' ) ) {
 	function solitude_scripts() {
 		wp_enqueue_style( 'solitude_google_fonts' );
 		wp_enqueue_style( 'solitude-style' , get_stylesheet_uri() , array( 'solitude-bootstrap' ) , '15022017' , 'all' );
-		wp_enqueue_style( 'solitude-bootstrap' , get_theme_file_uri( '/css/bootstrap.css' ) , array() , '3.3.7' , 'all' );
 		wp_enqueue_script( 'solitude-main' , get_theme_file_uri( '/js/main.js' ) , array( 'jquery' ) , '15022017' , true );
 		wp_enqueue_script( 'solitude-bootstrap-js' , get_theme_file_uri( '/js/bootstrap.js' ) , array( 'jquery' ) , '3.3.7' , true );
 	}
@@ -109,3 +108,7 @@ require( get_template_directory() . '/inc/walker-nav.php' );
  * Customizer additions.
  */
 require get_parent_theme_file_path( '/inc/customizer.php' );
+/**
+ * Bootstrap Themes
+ */
+require get_parent_theme_file_path( '/inc/bootstrap-styles.php' );
