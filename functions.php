@@ -100,23 +100,12 @@ function solitude_javascript_detection() {
 }
 add_action( 'wp_head', 'solitude_javascript_detection', 0 );
 
-if ( ! function_exists( 'solitude_google_fonts' ) ) {
-
-	/**
-	 * Add Google Fonts
-	 *
-	 * @since Solitude 1.0
-	 */
-	function solitude_google_fonts() {
-		$query_args = array(
-			'family' => 'Lato',
-		);
-		wp_register_style( 'solitude_google_fonts', add_query_arg( $query_args , '//fonts.googleapis.com/css' ) , array() , null );
-	}
-	add_action( 'init' , 'solitude_google_fonts' );
-}
-
 /**
  * Include Walker Classes for the Navigation
  */
 require( get_template_directory() . '/inc/walker-nav.php' );
+
+/**
+ * Customizer additions.
+ */
+require get_parent_theme_file_path( '/inc/customizer.php' );
