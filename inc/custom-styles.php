@@ -38,6 +38,6 @@ function solitude_custom_css() {
 	}
 </style>
 	';
-	echo $style;
+	echo esc_html( $style );
 }
 add_action( 'wp_head' , 'solitude_custom_css' );
