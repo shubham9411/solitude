@@ -25,37 +25,12 @@
 		<div id="page" class="site">
 			<a class="skip-link sr-only screen-reader-text" href="#content"><?php _e( 'Skip to content', 'solitude' ); // WPCS: xss ok. ?></a> 
 			<header id="header" class="">
-				<nav class="navbar navbar-fixed-top">
-					<div class="container">
-						<div class="navbar-header">
-							<div class="navbar-inverse nav-icon">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-menu" aria-expanded="false" aria-controls="navbar">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-							</div>
-							<a class="navbar-brand site-title" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?><div><small style="font-weight: 500;font-size:0.6em;line-height: 1.5em;"><?php bloginfo( 'description' );?></small></div></a>
-						</div>
-						<div id="top-menu" class="navbar-collapse collapse">
-							<ul class="nav navbar-nav navbar-right">
-								
-							</ul>
-							<?php
-								$args = array(
-									'theme_location' => 'top',
-									'container' => 'ul',
-									'menu_class' => 'nav navbar-nav navbar-right',
-									'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
-									'depth' => 1,
-									'walker' => '',
-								);
-								wp_nav_menu( $args );
-								?>
-						</div><!--/.nav-collapse -->
-					</div>
-				</nav>
+
+				<?php if ( has_nav_menu( 'top' ) ):
+					get_template_part( 'template-parts/header' , 'navigation' );
+				endif; ?>
+
 			</header><!-- /header -->
+
 			<div class="site-content-contain">
 				<div id="content" class="site-content">

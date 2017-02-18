@@ -18,7 +18,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 700;
 }
 
-if ( ! function_exists( 'solitude_scripts' ) ) :
+if ( ! function_exists( 'solitude_scripts' ) ) {
 	/**
 	 * Enqueue scripts and styles
 	 */
@@ -32,7 +32,7 @@ if ( ! function_exists( 'solitude_scripts' ) ) :
 
 	add_action( 'wp_enqueue_scripts' , 'solitude_scripts' );
 
-endif;
+}
 
 
 if ( ! function_exists( 'solitude_setup' ) ) :
@@ -115,3 +115,8 @@ if ( ! function_exists( 'solitude_google_fonts' ) ) {
 	}
 	add_action( 'init' , 'solitude_google_fonts' );
 }
+
+/**
+ * Include Walker Classes for the Navigation
+ */
+require( get_template_directory() . '/inc/walker-nav.php' );
