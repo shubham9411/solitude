@@ -93,7 +93,7 @@ add_action( 'customize_preview_init', 'solitude_customize_preview_js' );
  *
  * @since Solitude 1.0
  *
- * @param string $input Contains the value selected from customizer
+ * @param string $input Contains the value selected from customizer.
  */
 function solitude_sanitize_bootstrap_themes( $input ) {
 	$bt_themes = array( 'default' , 'paper' , 'darkly' , 'lumen' );
@@ -110,7 +110,7 @@ function solitude_sanitize_bootstrap_themes( $input ) {
  *
  * @since Solitude 1.0
  *
- * @param string $input Contains the value selected from customizer
+ * @param string $input Contains the value selected from customizer.
  */
 function solitude_sanitize_bootstrap_themes_varient( $input ) {
 	$bt_varient = array( 'default' , 'inverse' );
