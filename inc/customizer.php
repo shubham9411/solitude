@@ -1,7 +1,7 @@
 <?php
 /**
  * Solitude : Customizer
- * 
+ *
  * @package WordPress
  * @subpackage Solitude
  * @since 1.0
@@ -92,6 +92,8 @@ add_action( 'customize_preview_init', 'solitude_customize_preview_js' );
  * Sanitize the Bootstrap theme
  *
  * @since Solitude 1.0
+ *
+ * @param string $input Contains the value selected from customizer
  */
 function solitude_sanitize_bootstrap_themes( $input ) {
 	$bt_themes = array( 'default' , 'paper' , 'darkly' , 'lumen' );
@@ -107,6 +109,8 @@ function solitude_sanitize_bootstrap_themes( $input ) {
  * Sanitize the Bootstrap theme varients
  *
  * @since Solitude 1.0
+ *
+ * @param string $input Contains the value selected from customizer
  */
 function solitude_sanitize_bootstrap_themes_varient( $input ) {
 	$bt_varient = array( 'default' , 'inverse' );

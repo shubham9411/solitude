@@ -8,7 +8,7 @@
  * @version 1.0
  */
 
-$navbar_varient = get_theme_mod( 'solitude_bootstrap_varient' , 'default' );
+$navbar_varient = esc_attr( get_theme_mod( 'solitude_bootstrap_varient' , 'default' ) );
 ?><nav class="navbar navbar-<?php echo $navbar_varient; ?> navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">

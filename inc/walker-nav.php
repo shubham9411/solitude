@@ -22,8 +22,8 @@ if ( ! class_exists( 'Walker_Nav_top' ) ) {
 		 * @since 3.0.0
 		 *
 		 * @param string $output Passed by reference. Used to append additional content.
-		 * @param int  $depth Depth of page. Used for padding.
-		 * @param array $args An array of additional arguments.
+		 * @param int    $depth Depth of page. Used for padding.
+		 * @param array  $args An array of additional arguments.
 		 */
 		public function start_lvl( &$output, $depth = 0, $args = array() ) {
 			$indent = str_repeat( "\t", $depth );
@@ -54,17 +54,13 @@ if ( ! class_exists( 'Walker_Nav_top' ) ) {
 			 */
 			if ( 0 == strcasecmp( $item->attr_title , 'divider' ) && 1 === $depth ) {
 				$output .= $indent . '<li role="presentation" class="divider">';
-			}
-			elseif ( 0 == strcasecmp( $item->title , 'divider' ) && 1 === $depth ) {
+			} elseif ( 0 == strcasecmp( $item->title , 'divider' ) && 1 === $depth ) {
 				$output .= $indent . '<li role="presentation" class="divider">';
-			}
-			elseif ( 0 == strcasecmp( $item->attr_title , 'dropdown-header' ) && 1 === $depth ) {
+			} elseif ( 0 == strcasecmp( $item->attr_title , 'dropdown-header' ) && 1 === $depth ) {
 				$output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
-			}
-			elseif ( 0 == strcasecmp( $item->attr_title , 'disabled' ) ) {
+			} elseif ( 0 == strcasecmp( $item->attr_title , 'disabled' ) ) {
 				$output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
-			}
-			else {
+			} else {
 				$class_names = $value = '';
 				$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 				$classes[] = 'menu-item-' . $item->ID;
@@ -111,8 +107,7 @@ if ( ! class_exists( 'Walker_Nav_top' ) ) {
 				 */
 				if ( ! empty( $item->attr_title ) ) {
 					$item_output .= '<a' . $attributes . '><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
-				}
-				else {
+				} else {
 					$item_output .= '<a' . $attributes . '>';
 				}
 				$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
