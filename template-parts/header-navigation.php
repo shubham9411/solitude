@@ -1,4 +1,14 @@
-<nav class="navbar navbar-default navbar-fixed-top">
+<?php
+/**
+ * Display Navigation Bar
+ *
+ * @package WordPress
+ * @subpackage Solitude
+ * @since 1.0
+ * @version 1.0
+ */
+
+?><nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-menu" aria-expanded="false" aria-controls="navbar">
@@ -18,7 +28,6 @@
 					'items_wrap' => '<ul id = "%1$s" class = "%2$s">%3$s</ul>',
 					'depth' => 0,
 					'walker' => new Walker_Nav_top(),
-					'fallback_cb' => 'Walker_Nav_top::fallback',
 				);
 				wp_nav_menu( $args );
 				?>
