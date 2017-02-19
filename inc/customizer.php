@@ -81,7 +81,7 @@ function solitude_customize_register( $wp_customize ) {
 		'default' => 2,
 		'type' => 'theme_mod',
 		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'absint',
+		'sanitize_callback' => 'solitude_sanitize_border_size',
 	) );
 
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'solitude_header_color', array(
@@ -156,4 +156,19 @@ function solitude_sanitize_bootstrap_themes_varient( $input ) {
 	}
 
 	return 'default';
+}
+
+/**
+ * Sanitize the border size in the header
+ *
+ * @since Solitude 1.0
+ *
+ * @param int $size Value of the Border size.
+ */
+function solitude_sanitize_border_size( $size ) {
+	$size = absint( $size );
+	if ( 20 < $size ) {
+		return 20;
+	}
+	return $size;
 }

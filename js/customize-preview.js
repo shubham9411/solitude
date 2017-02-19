@@ -24,6 +24,9 @@
 	//Update Border size in real time
 	wp.customize( 'solitude_header_border_size', function( value ) {
 		value.bind( function( newval ) {
+			if ( 20 < newval ) {
+				newval = 20;
+			}
 			$( '#header' ).css( 'border-width', newval );
 			$( '#site-header-nav' ).css( 'border-width', newval );
 		});

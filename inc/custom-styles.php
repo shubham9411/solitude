@@ -26,7 +26,7 @@ add_action( 'wp_enqueue_scripts' , 'solitude_bootstrap_styles' );
  * @since Solitude 1.0
  */
 function solitude_custom_css() {
-	$header_color = get_theme_mod( 'solitude_header_color' , '#fff' );
+	$header_color = get_theme_mod( 'solitude_header_color' , '#b92b27' );
 	$border_size = absint( get_theme_mod( 'solitude_header_border_size' , '2' ) );
 	$css = '
 /**

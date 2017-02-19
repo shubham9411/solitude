@@ -25,6 +25,10 @@
 		<div id="page" class="site">
 			<a class="skip-link sr-only screen-reader-text" href="#content"><?php _e( 'Skip to content', 'solitude' ); // WPCS: xss ok. ?></a> 
 			<header id="header" class="">
+			
+				<div class="custom-header">
+					<?php get_template_part( 'template-parts/header' , 'image' ); ?>
+				</div> <!-- .custom-header -->
 
 				<?php if ( has_nav_menu( 'top' ) ) :
 					get_template_part( 'template-parts/header' , 'navigation' );

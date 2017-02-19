@@ -82,6 +82,36 @@ body{
 .logged-in.admin-bar .navbar-fixed-top{
 	top: 32px !important;
 }
+
+/*===========Custom Header ============*/
+.custom-header-image{
+	left: 0;
+	-o-object-fit: cover;
+	object-fit: cover;
+	top: 0;
+	width: 100%;
+	max-height: 38.5em;
+}
+
+/*========== Post Styling =============*/
+.post{
+	border: 1px #ddd solid;
+	border-radius: 5px 5px 0 0;
+	padding: 1em;
+	margin: 1em;
+}
+.entry-title{
+	margin-top: 0;
+}
+.card{
+	-webkit-box-shadow: 0 5px 6px -6px black;
+	-moz-box-shadow: 0 5px 6px -6px black;
+	box-shadow: 0 5px 6px -6px black;
+	transition: 0.3s;
+}
+.card:hover {
+	box-shadow: 0 8px 16px 1px rgba(0,0,0,0.2);
+}
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
 
