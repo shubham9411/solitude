@@ -16,8 +16,8 @@
 	// Update site title color in real time
 	wp.customize( 'solitude_header_color' , function( value ) {
 		value.bind( function( newval ) {
-			$( '#header' ).css( 'border-color' , newval );
-			$( '#site-header-nav' ).css( 'border-color' , newval);
+			$( '#header' ).css( 'border-top-color' , newval );
+			$( '#site-header-nav' ).css( 'border-top-color' , newval);
 		});
 	});
 
