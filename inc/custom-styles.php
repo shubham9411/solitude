@@ -35,6 +35,9 @@ function solitude_custom_css() {
  */
  #header{
 	border-top: ' . $border_size . 'px solid ' . $header_color . ';
+}
+.post:hover{
+	border-top: 2px ' . $header_color . ' solid;
 }';
 	/**
 	 * Filters Solitude custom colors CSS.

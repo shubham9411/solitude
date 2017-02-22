@@ -22,7 +22,6 @@ body{
     background: #fc6d6d;
     color: #fff;
 }
-
 /* Text meant only for screen readers. */
 
 .screen-reader-text {
@@ -92,9 +91,15 @@ Alignments
 /*========== Post Styling =============*/
 .post{
 	border: 1px #ddd solid;
-	border-radius: 5px 5px 0 0;
+	border-top: 2px solid;
+	border-radius: 0 0 5px 5px;
 	padding: 1em;
 	margin: 1em;
+}
+.post img{
+	width: 100%;
+	height: auto;
+	display: block;
 }
 .entry-title{
 	margin-top: 0;
@@ -110,6 +115,39 @@ Alignments
 
 .navbar{
 	margin-bottom: 0;
+}
+
+/*========== Gallery Design ============*/
+.wp-caption{
+	display: block;
+	max-width: 100%;
+	height: auto;
+	border: 1px #ddd solid;
+	padding: 1em;
+}
+.wp-caption-text,
+.gallery-caption{
+	text-align: center;
+	margin: 0.5em 0 0 0;
+}
+.gallery-item{
+	display: inline-block;
+	border: 1px #ddd solid;
+	width: 32%;
+	margin: 2px;
+	padding: 0.5em;
+	box-shadow: 0 1px 2px rgba(0,0,0,.7);
+}
+.gallery-icon{
+	overflow: hidden;
+}
+.gallery-icon a img{
+	transition: .5s transform;
+	transform: translateZ(0);
+}
+.gallery-item:hover .gallery-icon a img{
+	transform: scale(1.5,1.5);
+	transition: .5s transform;
 }
 /*========== Media Queries ============*/
 /*--------------------------------------------------Large-------------------------------------------------*/
@@ -131,8 +169,14 @@ Alignments
 /*--------------------------------------------------phone-------------------------------------------------*/
 
 @media only screen and (max-width: 767px) and (min-width: 480px) {
+	.gallery-item{
+		width: 48%;
+	}
 }
 /*--------------------------------------------------phone-------------------------------------------------*/
 
 @media only screen and (max-width: 479px) {
+	.gallery-item{
+		width: 100%;
+	}
 }

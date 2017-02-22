@@ -95,6 +95,10 @@ if ( ! function_exists( 'solitude_setup' ) ) :
 
 		add_theme_support( 'custom-header' , $args );
 
+		add_theme_support( 'html5' , array(
+			'gallery',
+		) );
+
 		add_editor_style( array( 'css/editor-style.css' ) );
 
 	}
@@ -132,6 +136,18 @@ function solitude_javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 add_action( 'wp_head', 'solitude_javascript_detection', 0 );
+
+/**
+ * Adds the `img-responsive` class to all the images.
+ *
+ * @since Solitude 1.0
+ * @param string class string of classes.
+ */
+function solitude_add_image_class($classes){
+	$classes .= ' img-responsive';
+	return $classes;
+}
+add_filter('get_image_tag_class','solitude_add_image_class');
 
 /**
  * Include Walker Classes for the Navigation
