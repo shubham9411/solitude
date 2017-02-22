@@ -23,7 +23,6 @@ if ( ! function_exists( 'solitude_scripts' ) ) {
 	 * Enqueue scripts and styles
 	 */
 	function solitude_scripts() {
-		wp_enqueue_style( 'solitude_google_fonts' );
 		wp_enqueue_style( 'solitude-style' , get_stylesheet_uri() , array( 'solitude-bootstrap' ) , '1.0' , 'all' );
 		wp_enqueue_script( 'solitude-main' , get_theme_file_uri( '/js/main.js' ) , array( 'jquery' ) , '1.0' , true );
 		wp_enqueue_script( 'solitude-bootstrap-js' , get_theme_file_uri( '/js/bootstrap.js' ) , array( 'jquery' ) , '3.3.7' , true );
@@ -54,7 +53,7 @@ if ( ! function_exists( 'solitude_setup' ) ) :
 
 		add_theme_support( 'post-thumbnails' );
 
-		add_theme_support('custom-background');
+		add_theme_support( 'custom-background' );
 
 		register_nav_menus( array(
 			'top'    => __( 'Top Menu', 'solitude' ),
@@ -78,11 +77,12 @@ if ( ! function_exists( 'solitude_setup' ) ) :
 			'quote',
 			'link',
 			'gallery',
+			'status',
 			'audio',
 		) );
 
 		$args = array(
-			'default-image'          => get_template_directory_uri().'/img/default-header.png',
+			'default-image'          => get_template_directory_uri() . '/img/default-header.png',
 			'width'                  => 2000,
 			'height'                 => 1200,
 			'video'                  => false,

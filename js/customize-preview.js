@@ -17,7 +17,6 @@
 	wp.customize( 'solitude_header_color', function( value ) {
 		value.bind( function( newval ) {
 			$( '#header' ).css( 'border-top-color', newval );
-			$( '#site-header-nav' ).css( 'border-top-color', newval );
 		});
 	});
 
@@ -28,7 +27,6 @@
 				newval = 20;
 			}
 			$( '#header' ).css( 'border-width', newval );
-			$( '#site-header-nav' ).css( 'border-width', newval );
 		});
 	});
 } )( jQuery );

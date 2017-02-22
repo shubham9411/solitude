@@ -9,7 +9,7 @@
  */
 
 $navbar_varient = get_theme_mod( 'solitude_bootstrap_varient' , 'default' );
-?><nav class="navbar navbar-<?php echo esc_attr( $navbar_varient ); ?> navbar-fixed-top" id="site-header-nav">
+?><nav class="navbar navbar-<?php echo esc_attr( $navbar_varient ); ?>" id="site-header-nav">
 	<div class="container">
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-menu" aria-expanded="false" aria-controls="navbar">

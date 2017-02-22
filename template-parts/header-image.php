@@ -1,7 +1,7 @@
 <?php
 /**
  * Display Custom Header images
- * 
+ *
  * @package WordPress
  * @subpackage Solitude
  * @since 1.0
