@@ -141,13 +141,13 @@ add_action( 'wp_head', 'solitude_javascript_detection', 0 );
  * Adds the `img-responsive` class to all the images.
  *
  * @since Solitude 1.0
- * @param string class string of classes.
+ * @param string classes string of classes.
  */
 function solitude_add_image_class($classes){
 	$classes .= ' img-responsive';
 	return $classes;
 }
-add_filter('get_image_tag_class','solitude_add_image_class');
+add_filter( 'get_image_tag_class' ,'solitude_add_image_class' );
 
 /**
  * Include Walker Classes for the Navigation
